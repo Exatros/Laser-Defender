@@ -6,8 +6,11 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     // configuration params
+    [Header("Player")]
     [SerializeField] float moveSpeed = 10f;
     [SerializeField] float padding = 0.5f;
+    [SerializeField] int health = 300;
+    [Header("Projectile")]
     [SerializeField] GameObject laserPrefab;
     [SerializeField] float projectileSpeed = 5f;
     [SerializeField] float projectileFiringPeriod = 0.2f;
