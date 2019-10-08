@@ -8,25 +8,27 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] List<WaveConfig> waveConfigs;
     [SerializeField] int startingWave = 0;
     [SerializeField] bool looping = false;
+    bool lastWave = false;
 
 
     // Start is called before the first frame update
     IEnumerator Start()
     {
+        yield return new WaitForSecondsRealtime(1.5f);
         do
         {
-           yield return StartCoroutine(SpawnAllWaves());
+            yield return StartCoroutine(SpawnAllWaves());
 
         } while (looping);
     }
 
     private IEnumerator SpawnAllWaves()
     {
-        for( int waveIndex = startingWave; waveIndex < waveConfigs.Count; waveIndex++)
+        for (int waveIndex = startingWave; waveIndex < waveConfigs.Count; waveIndex++)
         {
             var currentWave = waveConfigs[waveIndex];
             yield return StartCoroutine(SpawnAllEnemiesInWave(currentWave));
-
+            if (waveIndex + 1 == waveConfigs.Count && !looping) { lastWave = true; }
         }
     }
 
@@ -34,11 +36,12 @@ public class EnemySpawner : MonoBehaviour
     {
         for (int enemyCount = 0; enemyCount < waveConfig.GetNumberOfEnemies(); enemyCount++)
         {
-           var newEnemy = Instantiate(
-                waveConfig.GetEnemyPrefab(),
-                waveConfig.GetWaypoints()[0].transform.position,
-                Quaternion.identity);
+            var newEnemy = Instantiate(
+                 waveConfig.GetEnemyPrefab(),
+                 waveConfig.GetWaypoints()[0].transform.position,
+                 Quaternion.identity);
             newEnemy.GetComponent<EnemyPathing>().SetWaveConfig(waveConfig);
+            FindObjectOfType<GameSession>().AddEnemyCounter();
             yield return new WaitForSeconds(waveConfig.GetTimeBetweenSpawns());
         }
 
@@ -47,6 +50,9 @@ public class EnemySpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(lastWave && FindObjectOfType<GameSession>().GetCountOfEnemy() == 0)
+        {
+            FindObjectOfType<Level>().LoadGameOver();
+        }
     }
 }

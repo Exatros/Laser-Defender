@@ -7,6 +7,8 @@ public class GameSession : MonoBehaviour
 {
     int score = 0;
 
+    int countOfEnemy;
+
     private void Awake()
     {
         SetUpSingleton();
@@ -30,6 +32,20 @@ public class GameSession : MonoBehaviour
         return score;
     }
 
+    public int GetCountOfEnemy()
+    {
+        return countOfEnemy;
+    }
+
+    public void AddEnemyCounter()
+    {
+        countOfEnemy++;
+    }
+
+    public void DecraseEnemyCounter()
+    {
+        countOfEnemy--;
+    }
 
     public void AddToScore(int scoreValue)
     {

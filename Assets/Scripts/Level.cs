@@ -23,12 +23,16 @@ public class Level : MonoBehaviour
     public void LoadStage()
     {
         SceneManager.LoadScene("Stage 1");
-        FindObjectOfType<GameSession>().ResetGame();
+        if (SceneManager.GetActiveScene().buildIndex != 0)
+        {
+            FindObjectOfType<GameSession>().ResetGame();
+        }
     }
 
     public void LoadStartMenu()
     {
         SceneManager.LoadScene(0);
+        FindObjectOfType<GameSession>().ResetGame();
 
     }
 
