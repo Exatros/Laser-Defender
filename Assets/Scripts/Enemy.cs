@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    [Header("")]
+    [Header("Enemy Stats")]
     [SerializeField] float health = 100;
-    [Header("")]
+    [SerializeField] int scoreValue = 150;
+    [Header("Shooting")]
     [SerializeField] float shotCounter;
     [SerializeField] float minTimeBetweenShots = 0.3f;
     [SerializeField] float maxTimeBetweenShots = 1f;
@@ -76,6 +77,7 @@ public class Enemy : MonoBehaviour
 
     private void Die()
     {
+        FindObjectOfType<GameSession>().AddToScore(scoreValue);
         Destroy(gameObject);
         GameObject explosion = Instantiate(deathVFX, transform.position, transform.rotation);
         Destroy(explosion, durationOfExplosion);
