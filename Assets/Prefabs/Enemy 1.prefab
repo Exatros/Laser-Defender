@@ -125,7 +125,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
-  shotCounter: 0
+  scoreValue: 150
   minTimeBetweenShots: 0.3
   maxTimeBetweenShots: 2
   projectile: {fileID: 2777297062339269036, guid: 33aa7c79c38e190418d3f57d09ed0cfe,
@@ -171,4 +171,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ed762dc464f9db4f9cbe5c43853ccf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1000
+  damage: 100
