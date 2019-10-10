@@ -36,23 +36,45 @@ public class EnemySpawner : MonoBehaviour
     {
         for (int enemyCount = 0; enemyCount < waveConfig.GetNumberOfEnemies(); enemyCount++)
         {
-            var newEnemy = Instantiate(
-                 waveConfig.GetEnemyPrefab(),
-                 waveConfig.GetWaypoints()[0].transform.position,
-                 Quaternion.identity);
-            newEnemy.GetComponent<EnemyPathing>().SetWaveConfig(waveConfig);
-            FindObjectOfType<GameSession>().AddEnemyCounter();
+            if (waveConfig.GetIsDoubleWave())
+            {
+                CreateEnemy(waveConfig, waveConfig.GetWaypoints());
+                CreateEnemy(waveConfig, waveConfig.GetWaypointsFromPath2());
+            }
+            else
+            {
+                CreateEnemy(waveConfig, waveConfig.GetWaypoints());
+
+            }
+
+
             yield return new WaitForSeconds(waveConfig.GetTimeBetweenSpawns());
         }
 
     }
+
+    private void CreateEnemy(WaveConfig waveConfig, List <Transform> waypoints)
+    {
+        var newEnemy = Instantiate(
+                         waveConfig.GetEnemyPrefab(),
+                         waypoints[0].position,
+                         Quaternion.identity);
+        newEnemy.GetComponent<EnemyPathing>().SetWaveConfig(waveConfig);
+        newEnemy.GetComponent<EnemyPathing>().SetWaypoints(waypoints);
+        FindObjectOfType<GameSession>().AddEnemyCounter();
+
+    }
+
+
 
     // Update is called once per frame
     void Update()
     {
         if(lastWave && FindObjectOfType<GameSession>().GetCountOfEnemy() == 0)
         {
-            FindObjectOfType<Level>().LoadGameOver();
+            
+            FindObjectOfType<Level>().LoadGameOver(true);
+            FindObjectOfType<GameSession>().SetNextStage();
         }
     }
 }

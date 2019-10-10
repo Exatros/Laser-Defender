@@ -2,12 +2,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameSession : MonoBehaviour
 {
     int score = 0;
-
-    int countOfEnemy;
+    [SerializeField] int countOfEnemy = 0;
+    int nextScene = 0;
 
     private void Awake()
     {
@@ -25,6 +26,16 @@ public class GameSession : MonoBehaviour
         {
             DontDestroyOnLoad(gameObject);
         }
+    }
+
+    public void SetNextStage()
+    {
+        nextScene = SceneManager.GetActiveScene().buildIndex + 1;
+    }
+
+    public int GetNextStage()
+    {
+        return nextScene;
     }
 
     public int GetScore()

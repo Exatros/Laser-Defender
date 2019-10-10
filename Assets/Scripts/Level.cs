@@ -7,22 +7,46 @@ public class Level : MonoBehaviour
 {
     [SerializeField] float delayInSeconds = 2;
 
-    public void LoadGameOver()
+    private void Start()
     {
-
-        StartCoroutine(WaitAndLoad());
+        Screen.SetResolution(540, 960, false);
     }
-    
-    private IEnumerator WaitAndLoad()
+
+    public void LoadNextStage()
+    {
+        SceneManager.LoadScene("Stage " + FindObjectOfType<GameSession>().GetNextStage().ToString());
+    }
+
+    public void LoadGameOver(bool isPlayerWin)
+    {
+        StartCoroutine(WaitAndLoad(isPlayerWin));
+    }
+
+
+    private IEnumerator WaitAndLoad(bool isPlayerWin)
     {
         yield return new WaitForSeconds(delayInSeconds);
-        SceneManager.LoadScene("Game Over");
+        if (isPlayerWin)
+        {
+            SceneManager.LoadScene("Win Stage");
+
+        }
+        else
+        {
+            SceneManager.LoadScene("Game Over");
+
+        }
 
     }
 
-    public void LoadStage()
+    public void LoadFirstStage()
     {
         SceneManager.LoadScene("Stage 1");
+    }
+
+    public void LoadStageOver()
+    {
+        SceneManager.LoadScene("Stage " + (FindObjectOfType<GameSession>().GetNextStage() - 1).ToString());
         if (SceneManager.GetActiveScene().buildIndex != 0)
         {
             FindObjectOfType<GameSession>().ResetGame();

@@ -5,18 +5,26 @@ using TMPro;
 
 public class HealthDisplay : MonoBehaviour
 {
-    TextMeshProUGUI scoreText;
+    TextMeshProUGUI healthText;
     Player player;
     // Start is called before the first frame update
     void Start()
     {
-        scoreText = GetComponent<TextMeshProUGUI>();
+        healthText = GetComponent<TextMeshProUGUI>();
         player = FindObjectOfType<Player>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        scoreText.text = player.GetHealth().ToString();
+        if(player.GetHealth() >= 0 )
+        {
+            healthText.text = player.GetHealth().ToString();
+
+        }
+        else
+        {
+            healthText.text = 0.ToString();
+        }
     }
 }

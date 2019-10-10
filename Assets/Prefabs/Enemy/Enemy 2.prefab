@@ -10,13 +10,13 @@ GameObject:
   m_Component:
   - component: {fileID: 2815882578544916483}
   - component: {fileID: 2815882578544916482}
-  - component: {fileID: 703586876043637244}
+  - component: {fileID: 9221697432539517658}
   - component: {fileID: 6113753420493867953}
-  - component: {fileID: -1335712478946030214}
-  - component: {fileID: 8544801191440446726}
-  - component: {fileID: -7592909990044706299}
+  - component: {fileID: -1976317966598328450}
+  - component: {fileID: -6074932852703135327}
+  - component: {fileID: -7352289269611607307}
   m_Layer: 9
-  m_Name: Enemy 3
+  m_Name: Enemy 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 8019aa0204af8144b848845297ecf207, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 44c0adf5afa61f5438e50d6302fa9d66, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -84,7 +84,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &703586876043637244
+--- !u!58 &9221697432539517658
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -99,7 +99,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.8
+  m_Radius: 0.4
 --- !u!114 &6113753420493867953
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -112,7 +112,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2adc60c71d38e4f43a12fbf280ce17a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &-1335712478946030214
+--- !u!114 &-1976317966598328450
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -124,21 +124,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce969ceddfb9fb9408aee9e9a74663af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 800
-  scoreValue: 1000
+  health: 100
+  scoreValue: 150
   minTimeBetweenShots: 0.5
   maxTimeBetweenShots: 2
-  projectile: {fileID: 2777297062339269036, guid: d22d8c1b4f8c1ae459d8a1b2e55f142d,
+  projectile: {fileID: 2777297062339269036, guid: 33aa7c79c38e190418d3f57d09ed0cfe,
     type: 3}
-  projectileSpeed: 3
+  projectileSpeed: 10
   deathVFX: {fileID: 7400074957427231754, guid: 4383cff337ba9b74aabe8749b264f72d,
     type: 3}
-  durationOfExplosion: 2
+  durationOfExplosion: 1
   deathSFX: {fileID: 8300000, guid: b0a19e7f4ece3e1429a082b43f80bd3b, type: 3}
   shootSFX: {fileID: 8300000, guid: 638495963f64d324aa5d41968d68c83a, type: 3}
   deathSFXVolume: 0.7
   shootSFXVolume: 0.25
---- !u!50 &8544801191440446726
+--- !u!50 &-6074932852703135327
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -159,7 +159,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &-7592909990044706299
+--- !u!114 &-7352289269611607307
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -171,4 +171,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ed762dc464f9db4f9cbe5c43853ccf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1000
+  damage: 200

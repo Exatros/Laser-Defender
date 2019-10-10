@@ -14,6 +14,10 @@ public class DamageDealer : MonoBehaviour
 
     public void Hit()
     {
+        if (gameObject.GetComponent<Enemy>() != null)
+        {
+            FindObjectOfType<GameSession>().DecraseEnemyCounter();
+        }
         Destroy(gameObject);
     }
 }

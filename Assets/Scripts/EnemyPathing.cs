@@ -10,7 +10,7 @@ public class EnemyPathing : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        waypoints = waveConfig.GetWaypoints();
+        //waypoints = waveConfig.GetWaypoints();
         transform.position = waypoints[waypointIndex].transform.position;
     }
 
@@ -23,6 +23,11 @@ public class EnemyPathing : MonoBehaviour
     public void SetWaveConfig(WaveConfig waveConfig)
     {
         this.waveConfig = waveConfig;
+
+    }
+    public void SetWaypoints(List<Transform> waypoints)
+    {
+        this.waypoints = waypoints;
     }
 
     private void Move()
@@ -45,6 +50,7 @@ public class EnemyPathing : MonoBehaviour
         }
         else
         {
+            FindObjectOfType<GameSession>().DecraseEnemyCounter();
             Destroy(gameObject);
         }
     }

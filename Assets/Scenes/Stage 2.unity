@@ -630,12 +630,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3921094612866945710, guid: 5c7d81ac3049adc43bbc73325eced3df,
         type: 3}
-      propertyPath: looping
-      value: 0
+      propertyPath: waveConfigs.Array.size
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3921094612866945710, guid: 5c7d81ac3049adc43bbc73325eced3df,
         type: 3}
-      propertyPath: startingWave
+      propertyPath: looping
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -710,7 +710,7 @@ PrefabInstance:
     - target: {fileID: 4311387447959204219, guid: 31e6b584ceca97e47a1ce635dbe2ea04,
         type: 3}
       propertyPath: projectileFiringPeriod
-      value: 0.2
+      value: 0.3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31e6b584ceca97e47a1ce635dbe2ea04, type: 3}
