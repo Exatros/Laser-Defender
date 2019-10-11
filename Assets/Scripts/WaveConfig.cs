@@ -13,6 +13,7 @@ public class WaveConfig : ScriptableObject
     [SerializeField] int numberOfEnemies = 5;
     [SerializeField] float moveSpeed = 3f;
     [SerializeField] bool doubleWave = false;
+    [SerializeField] float timeForNextWave = 0.5f;
 
     public GameObject GetEnemyPrefab() { return enemyPrefab; }
 
@@ -38,7 +39,6 @@ public class WaveConfig : ScriptableObject
 
     public bool GetIsDoubleWave() { return doubleWave; }
 
-
     public float GetTimeBetweenSpawns() { return timeBetweenSpawns; }
 
     public float GetSpawnRandomFactor() { return spawnRandomFactor; }
@@ -46,5 +46,7 @@ public class WaveConfig : ScriptableObject
     public int GetNumberOfEnemies() { return numberOfEnemies; }
 
     public float GetMoveSpeed() { return moveSpeed; }
+
+    public float GetTimeForNextWave() { return timeForNextWave; }
 
 }

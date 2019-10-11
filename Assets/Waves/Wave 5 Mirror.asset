@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ac94b01406d918c40a57305744902c6e, type: 3}
-  m_Name: Wave 2
+  m_Name: Wave 5 Mirror
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 2815882578544916493, guid: dcdd5ac77c3366041b1e1cdeb3118dd5,
+  enemyPrefab: {fileID: 2815882578544916493, guid: efd2e678eb0212348a3cb9de10ab10b7,
     type: 3}
-  pathPrefab: {fileID: 461129561627801590, guid: 9d284cf8dba5ac94a9994393b6bc0fea,
+  pathPrefab: {fileID: 7345855256894749783, guid: 9a7c96b6bacb9b24f8a0c406fb8072db,
     type: 3}
-  pathPrefab2: {fileID: 461129561627801590, guid: ee9cb77a9aeba264a830c7222212c722,
-    type: 3}
-  timeBetweenSpawns: 1
+  pathPrefab2: {fileID: 0}
+  timeBetweenSpawns: 1.5
   spawnRandomFactor: 0.5
-  numberOfEnemies: 6
-  moveSpeed: 2.5
-  doubleWave: 1
+  numberOfEnemies: 5
+  moveSpeed: 1.5
+  doubleWave: 0
+  timeForNextWave: 1.5

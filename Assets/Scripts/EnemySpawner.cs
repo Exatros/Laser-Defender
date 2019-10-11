@@ -50,7 +50,7 @@ public class EnemySpawner : MonoBehaviour
 
             yield return new WaitForSeconds(waveConfig.GetTimeBetweenSpawns());
         }
-
+        yield return new WaitForSeconds(waveConfig.GetTimeForNextWave());
     }
 
     private void CreateEnemy(WaveConfig waveConfig, List <Transform> waypoints)

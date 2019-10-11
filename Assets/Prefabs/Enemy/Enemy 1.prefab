@@ -126,11 +126,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 75
   scoreValue: 50
-  minTimeBetweenShots: 0.5
-  maxTimeBetweenShots: 1
+  minTimeBetweenShots: 0.6
+  maxTimeBetweenShots: 1.2
   projectile: {fileID: 2777297062339269036, guid: 56fede11011ba614e9e7e81ecf4c6fa1,
     type: 3}
-  projectileSpeed: 15
+  projectileSpeed: 14
+  specialAttack: 0
+  minReloadTimeForSpecialAttack: 2
+  maxReloadTimeForSpecialAttack: 2
+  numberOfSpecialProjetiles: 10
   deathVFX: {fileID: 7400074957427231754, guid: 4383cff337ba9b74aabe8749b264f72d,
     type: 3}
   durationOfExplosion: 1

@@ -22,3 +22,4 @@ MonoBehaviour:
   numberOfEnemies: 8
   moveSpeed: 3
   doubleWave: 0
+  timeForNextWave: 3
