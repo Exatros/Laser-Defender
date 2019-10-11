@@ -128,7 +128,7 @@ MonoBehaviour:
   scoreValue: 150
   minTimeBetweenShots: 0.5
   maxTimeBetweenShots: 1
-  projectile: {fileID: 2777297062339269036, guid: 33aa7c79c38e190418d3f57d09ed0cfe,
+  projectile: {fileID: 2777297062339269036, guid: 56fede11011ba614e9e7e81ecf4c6fa1,
     type: 3}
   projectileSpeed: 15
   deathVFX: {fileID: 7400074957427231754, guid: 4383cff337ba9b74aabe8749b264f72d,
@@ -171,4 +171,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ed762dc464f9db4f9cbe5c43853ccf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 100
+  damage: 50
