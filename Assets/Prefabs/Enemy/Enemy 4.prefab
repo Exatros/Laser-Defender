@@ -99,7 +99,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.8
+  m_Radius: 0.55
 --- !u!114 &6113753420493867953
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -124,16 +124,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce969ceddfb9fb9408aee9e9a74663af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 800
-  scoreValue: 1000
+  health: 300
+  scoreValue: 350
   minTimeBetweenShots: 0.4
-  maxTimeBetweenShots: 1.2
+  maxTimeBetweenShots: 1
   projectile: {fileID: 2777297062339269036, guid: 56af7022f01932d438ab8da4fa80df29,
     type: 3}
-  projectileSpeed: 12
+  projectileSpeed: 13
   deathVFX: {fileID: 7400074957427231754, guid: 4383cff337ba9b74aabe8749b264f72d,
     type: 3}
-  durationOfExplosion: 1.5
+  durationOfExplosion: 3
   deathSFX: {fileID: 8300000, guid: b0a19e7f4ece3e1429a082b43f80bd3b, type: 3}
   shootSFX: {fileID: 8300000, guid: 638495963f64d324aa5d41968d68c83a, type: 3}
   deathSFXVolume: 0.7

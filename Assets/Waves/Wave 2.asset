@@ -18,8 +18,8 @@ MonoBehaviour:
     type: 3}
   pathPrefab2: {fileID: 461129561627801590, guid: ee9cb77a9aeba264a830c7222212c722,
     type: 3}
-  timeBetweenSpawns: 0.7
+  timeBetweenSpawns: 1
   spawnRandomFactor: 0.5
-  numberOfEnemies: 12
-  moveSpeed: 3
+  numberOfEnemies: 6
+  moveSpeed: 2.5
   doubleWave: 1

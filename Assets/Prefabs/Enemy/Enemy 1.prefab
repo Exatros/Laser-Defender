@@ -124,8 +124,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce969ceddfb9fb9408aee9e9a74663af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
-  scoreValue: 150
+  health: 75
+  scoreValue: 50
   minTimeBetweenShots: 0.5
   maxTimeBetweenShots: 1
   projectile: {fileID: 2777297062339269036, guid: 56fede11011ba614e9e7e81ecf4c6fa1,
