@@ -8,12 +8,14 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] List<WaveConfig> waveConfigs;
     [SerializeField] int startingWave = 0;
     [SerializeField] bool looping = false;
+    [SerializeField] float timeLooping = 60f;
     bool lastWave = false;
-
+    float timer;
 
     // Start is called before the first frame update
     IEnumerator Start()
     {
+        timer = timeLooping;
         yield return new WaitForSecondsRealtime(1.5f);
         do
         {
@@ -29,6 +31,7 @@ public class EnemySpawner : MonoBehaviour
             var currentWave = waveConfigs[waveIndex];
             yield return StartCoroutine(SpawnAllEnemiesInWave(currentWave));
             if (waveIndex + 1 == waveConfigs.Count && !looping) { lastWave = true; }
+            if (looping && timer < 0) { looping = false; lastWave = true; }
         }
     }
 
@@ -53,7 +56,7 @@ public class EnemySpawner : MonoBehaviour
         yield return new WaitForSeconds(waveConfig.GetTimeForNextWave());
     }
 
-    private void CreateEnemy(WaveConfig waveConfig, List <Transform> waypoints)
+    private void CreateEnemy(WaveConfig waveConfig, List<Transform> waypoints)
     {
         var newEnemy = Instantiate(
                          waveConfig.GetEnemyPrefab(),
@@ -65,14 +68,17 @@ public class EnemySpawner : MonoBehaviour
 
     }
 
+    public float GetTimer() { return timer; }
 
+    public bool GetLooping() { return looping; }
 
     // Update is called once per frame
     void Update()
     {
-        if(lastWave && FindObjectOfType<GameSession>().GetCountOfEnemy() == 0)
+        timer -= Time.deltaTime;
+        if (lastWave && FindObjectOfType<GameSession>().GetCountOfEnemy() == 0)
         {
-            
+
             FindObjectOfType<Level>().LoadGameOver(true);
             FindObjectOfType<GameSession>().SetNextStage();
         }

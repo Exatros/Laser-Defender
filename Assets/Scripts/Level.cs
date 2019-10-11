@@ -39,6 +39,16 @@ public class Level : MonoBehaviour
 
     }
 
+    public void LoadSelectMenu()
+    {
+        SceneManager.LoadScene("Select Menu");
+    }
+
+    public void LoadStage(int nr)
+    {
+        SceneManager.LoadScene(nr);
+    }
+
     public void LoadFirstStage()
     {
         SceneManager.LoadScene("Stage 1");

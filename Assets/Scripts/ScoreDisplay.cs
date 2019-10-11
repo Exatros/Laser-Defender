@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 public class ScoreDisplay : MonoBehaviour
 {
 
@@ -19,6 +20,16 @@ public class ScoreDisplay : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        scoreText.text = gameSession.GetScore().ToString();
+        if (SceneManager.GetActiveScene().name == "Win Stage" || SceneManager.GetActiveScene().name == "Game Over")
+        {
+            scoreText.text = gameSession.GetScore().ToString() + " PTS";
+
+
+        }
+        else
+        {
+            scoreText.text = gameSession.GetScore().ToString();
+
+        }
     }
 }
